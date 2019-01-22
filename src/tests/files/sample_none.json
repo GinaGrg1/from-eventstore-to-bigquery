@@ -1,0 +1,6 @@
+{"eventstore_timestamp": "2016-12-30T16:20:51.023757Z",
+ "changed_purchase_order_lines": [{"product_sku": "BBGPIG005TUR-ME",
+     "quantity": 260},
+    {"product_sku": "BBGPIG002GRY-ME", "quantity": 310}],
+   "exception_timestamp": "2016-12-20T03:19:28.962514",
+   "purchase_order_id": "16RAY021-FR"}

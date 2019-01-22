@@ -1,0 +1,12 @@
+{
+ "eventstore_timestamp": "2016-12-30T16:33:24.639163Z",
+  "reasons": [
+    "Government Control"
+  ],
+  "purchase_order_id": "18JAB001-UK",
+  "delivery_schedule": {
+    "fob_dates": {
+      "eta": "2018-06-13"
+    }
+  }
+}

@@ -1,0 +1,34 @@
+{
+  "eventstore_timestamp": "2016-12-30T16:20:51.023757Z",
+  "incoterm": "FOB",
+  "supplier_code": "CAR",
+  "purchase_order_id": "18CAR021-UK-",
+  "currency": "USD",
+  "warehouse_code": "dooley-rumble",
+  "approved_datetime": "2018-03-21T16:24:51.697759",
+  "order_date": "2018-03-15",
+  "purchase_order_lines": [
+    {
+      "product_sku": "OTOSCT004BRO-UK",
+      "unit_price": 20000,
+      "quantity": 6
+    },
+    {
+      "product_sku": "SOFSCT048GRN-UK",
+      "unit_price": 79900,
+      "quantity": 4
+    },
+    {
+      "product_sku": "SOFSCT047GRY-UK",
+      "unit_price": 79900,
+      "quantity": 4
+    }
+  ],
+  "delivery_schedule": {
+    "fob_dates": {
+      "eta": "2018-08-01",
+      "etd": "2018-06-27"
+    }
+  }
+}
+
