@@ -1,0 +1,15 @@
+---
+
+data_river_eventstore_pagesize: 10
+
+bigquery_project: <dev bigquery project>
+bigquery_dataset: eventstream
+bigquery_auth_project_id: <dev bigquery project id>
+bigquery_auth_client_email: <some name>@<dev bigquery project>.iam.gserviceaccount.com
+bigquery_auth_client_id: 222
+bigquery_auth_uri: https://accounts.google.com/o/oauth2/auth
+bigquery_token_uri: https://accounts.google.com/o/oauth2/token
+bigquery_auth_provider_x509_cert_url: https://www.googleapis.com/oauth2/v1/certs
+bigquery_client_x509_cert_url: <e.g https://www.googleapis.com/robot/v1/metadata/x509/analytics-uat%40invertible-star-147708.iam.gserviceaccount.com>
+bigquery_access_token_path: /secrets/access_token.json
+

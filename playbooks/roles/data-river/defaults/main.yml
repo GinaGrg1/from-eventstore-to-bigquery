@@ -1,0 +1,11 @@
+---
+
+data_river_job_name: "data-river"
+data_river_docker_image: "<docker image name>"
+data_river_docker_version: latest
+data_river_job_template: "{{ playbook_dir }}/roles/data-river/templates/data-river.nomad.j2"
+data_river_eventstore_host: eventstore.service.consul
+data_river_eventstore_subscription: datariver
+data_river_entrypoint_arg: "data-river-run-{{ env }}"
+data_river_resource_cpu: 250
+data_river_resource_mem: 1000

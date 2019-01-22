@@ -1,0 +1,32 @@
+[
+  {
+    "mode": "NULLABLE", 
+    "name": "purchase_order_id", 
+    "type": "STRING"
+  }, 
+  {
+   "mode": "NULLABLE",
+   "name": "etd_date",
+   "type": "DATE"
+  },
+  {
+   "mode": "NULLABLE",
+   "name": "eta_date",
+   "type": "DATE"
+  },
+  {
+   "mode": "NULLABLE",
+   "name": "delivery_type",
+   "type": "STRING"
+  }, 
+  {
+    "mode": "REPEATED", 
+    "name": "reasons", 
+    "type": "STRING"
+  },
+  {
+    "mode": "NULLABLE",
+    "name": "eventstore_timestamp",
+    "type": "TIMESTAMP"
+  }
+]

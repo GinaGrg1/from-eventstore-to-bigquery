@@ -1,0 +1,91 @@
+job "{{ data_river_job_name }}" {
+
+  datacenters = ["{{ env }}"]
+
+  type = "service"
+
+
+  vault {
+      policies = ["bi-ro"]
+  }
+
+  group "data-river" {
+
+    task "data-river" {
+      driver = "docker"
+
+      config {
+
+        image = "{{ data_river_docker_image }}:{{ data_river_docker_version }}"
+        command = "/bin/entrypoint"
+        args = ["{{ data_river_entrypoint_arg }}"]
+
+        logging {
+          type = "syslog"
+          config {
+            syslog-address = "unixgram:///run/systemd/journal/syslog"
+            tag = "{{ data_river_job_name }}"
+          }
+        }
+
+        auth {
+          username = "{{ nomad_docker_username }}"
+          password = "{{ nomad_docker_password }}"
+        }
+
+      }
+
+      constraint {
+
+        attribute = "${meta.profile}"
+        value     = "memory"
+      }
+
+      env {
+        DATA_RIVER_EVENTSTORE_HOST = "{{ data_river_eventstore_host }}"
+        DATA_RIVER_EVENTSTORE_SUBSCRIPTION = "{{ data_river_eventstore_subscription }}"
+        BIGQUERY_PROJECT = "{{ bigquery_project }}"
+        BIGQUERY_DATASET = "{{ bigquery_dataset }}"
+        BIGQUERY_AUTH_CLIENT_EMAIL = "{{ bigquery_auth_client_email }}"
+        BIGQUERY_AUTH_PROJECT_ID = "{{ bigquery_auth_project_id }}"
+        BIGQUERY_AUTH_CLIENT_ID = "{{ bigquery_auth_client_id }}"
+        BIGQUERY_AUTH_URI = "{{ bigquery_auth_uri }}"
+        BIGQUERY_TOKEN_URI = "{{ bigquery_token_uri }}"
+        BIGQUERY_AUTH_PROVIDER_X509_CERT_URL = "{{ bigquery_auth_provider_x509_cert_url }}"
+        BIGQUERY_CLIENT_X509_CERT_URL = "{{ bigquery_client_x509_cert_url }}"
+        BIGQUERY_ACCESS_TOKEN_PATH = "{{ bigquery_access_token_path }}"
+
+      }
+
+      {% raw %}
+      template {
+        data = <<EOH
+      {
+        "type": "service_account",
+        "project_id": "{{ env "BIGQUERY_AUTH_PROJECT_ID" }}",
+        "private_key_id": "{{ with secret "secret/bi/bigquery" }}{{ .Data.PRIVATE_KEY_ID }}{{ end }}",
+        "private_key": "{{ with secret "secret/bi/bigquery" }}{{ .Data.PRIVATE_KEY }}{{ end }}",
+        "client_email": "{{ env "BIGQUERY_AUTH_CLIENT_EMAIL" }}",
+        "client_id": "{{ env "BIGQUERY_AUTH_CLIENT_ID" }}",
+        "auth_uri": "{{ env "BIGQUERY_AUTH_URI" }}",
+        "token_uri": "{{ env "BIGQUERY_TOKEN_URI" }}",
+        "auth_provider_x509_cert_url": "{{ env "BIGQUERY_AUTH_PROVIDER_X509_CERT_URL" }}",
+        "client_x509_cert_url": "{{ env "BIGQUERY_CLIENT_X509_CERT_URL" }}"
+      }
+      EOH
+
+        destination = "secrets/access_token.json"
+        env = false
+      }
+      {% endraw %}
+
+      resources {
+        cpu    = {{ data_river_resource_cpu }}
+        memory = {{ data_river_resource_mem }}
+        network {
+          mbits = 1
+        }
+      }
+    }
+  }
+}

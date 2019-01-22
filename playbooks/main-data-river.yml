@@ -1,0 +1,6 @@
+---
+
+- name: Plan and Run Data River
+  hosts: "tag_Name_{{ env }}_nomad_client*"
+  roles:
+    - { role: data-river }

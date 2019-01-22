@@ -1,0 +1,17 @@
+---
+
+- name: Load variables
+  include_vars:
+    file: "{{ item }}"
+  with_items:
+    - "{{ library_path }}/group_vars/all"
+    - "vars/env/{{ env }}.yml"
+
+- name: Run nomad job
+  include_role:
+    name: nomad-job
+  vars:
+    nomad_job_name: "{{ data_river_job_name }}"
+    nomad_docker_image: "{{ data_river_docker_image }}"
+    nomad_docker_version: "{{ data_river_docker_version }}"
+    nomad_job_template: "{{ data_river_job_template }}"

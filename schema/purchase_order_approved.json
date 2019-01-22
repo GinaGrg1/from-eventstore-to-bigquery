@@ -1,0 +1,81 @@
+[
+    {
+      "mode": "NULLABLE", 
+      "name": "warehouse_code", 
+      "type": "STRING"
+    }, 
+    {
+      "fields": [
+        {
+          "mode": "NULLABLE", 
+          "name": "unit_price", 
+          "type": "INTEGER"
+        }, 
+        {
+          "mode": "NULLABLE", 
+          "name": "quantity", 
+          "type": "INTEGER"
+        }, 
+        {
+          "mode": "NULLABLE", 
+          "name": "product_sku", 
+          "type": "STRING"
+        }
+      ], 
+      "mode": "REPEATED", 
+      "name": "purchase_order_lines", 
+      "type": "RECORD"
+    }, 
+    {
+      "mode": "NULLABLE", 
+      "name": "order_date", 
+      "type": "DATE"
+    }, 
+    {
+      "mode": "NULLABLE", 
+      "name": "approved_datetime", 
+      "type": "TIMESTAMP"
+    }, 
+    {
+      "mode": "NULLABLE", 
+      "name": "currency", 
+      "type": "STRING"
+    }, 
+    {
+      "mode": "NULLABLE", 
+      "name": "purchase_order_id", 
+      "type": "STRING"
+    },
+    {
+      "mode": "NULLABLE",
+      "name": "etd_date",
+      "type": "DATE"
+    },
+    {
+       "mode": "NULLABLE",
+       "name": "eta_date",
+       "type": "DATE"
+    },
+    {
+       "mode": "NULLABLE",
+       "name": "delivery_type",
+       "type": "STRING"
+    }
+    , 
+    {
+      "mode": "NULLABLE", 
+      "name": "supplier_code", 
+      "type": "STRING"
+    }, 
+    {
+      "mode": "NULLABLE", 
+      "name": "incoterm", 
+      "type": "STRING"
+    },
+    {
+    "mode": "NULLABLE",
+    "name": "eventstore_timestamp",
+    "type": "TIMESTAMP"
+    }
+  ]
+

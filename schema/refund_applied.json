@@ -1,0 +1,61 @@
+[
+      {
+        "mode": "NULLABLE", 
+        "name": "date", 
+        "type": "TIMESTAMP"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "amount", 
+        "type": "INTEGER"
+      }, 
+      {
+        "fields": [
+          {
+            "fields": [
+              {
+                "mode": "NULLABLE", 
+                "name": "reason", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "action", 
+                "type": "STRING"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "quantity", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "amount", 
+                "type": "INTEGER"
+              }, 
+              {
+                "mode": "NULLABLE", 
+                "name": "sku", 
+                "type": "STRING"
+              }
+            ], 
+            "mode": "REPEATED", 
+            "name": "products", 
+            "type": "RECORD"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "id", 
+            "type": "INTEGER"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "rma", 
+        "type": "RECORD"
+      }, 
+      {
+        "mode": "NULLABLE", 
+        "name": "order_id", 
+        "type": "INTEGER"
+      }
+]

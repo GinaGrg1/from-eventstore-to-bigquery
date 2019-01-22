@@ -1,0 +1,2 @@
+# Group configuration that will affect all instances associated with ansible-ops plays
+library_path: "{{ playbook_dir }}/ansible-playbooks/playbooks"
