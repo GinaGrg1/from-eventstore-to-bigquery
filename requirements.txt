@@ -1,0 +1,6 @@
+requests==2.20.0
+pytest==3.5.0
+google.cloud==0.32.0
+photon-pump==0.2.5
+protobuf==3.5.1
+logstash-formatter==0.5.16
