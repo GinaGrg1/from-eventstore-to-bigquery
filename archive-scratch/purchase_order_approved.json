@@ -1,0 +1,147 @@
+[
+    {
+      "mode": "NULLABLE", 
+      "name": "warehouse_code", 
+      "type": "STRING"
+    }, 
+    {
+      "fields": [
+        {
+          "mode": "NULLABLE", 
+          "name": "unit_price", 
+          "type": "INTEGER"
+        }, 
+        {
+          "mode": "NULLABLE", 
+          "name": "quantity", 
+          "type": "INTEGER"
+        }, 
+        {
+          "mode": "NULLABLE", 
+          "name": "product_sku", 
+          "type": "STRING"
+        }
+      ], 
+      "mode": "REPEATED", 
+      "name": "purchase_order_lines", 
+      "type": "RECORD"
+    }, 
+    {
+      "mode": "NULLABLE", 
+      "name": "order_date", 
+      "type": "DATE"
+    }, 
+    {
+      "mode": "NULLABLE", 
+      "name": "approved_datetime", 
+      "type": "TIMESTAMP"
+    }, 
+    {
+      "mode": "NULLABLE", 
+      "name": "currency", 
+      "type": "STRING"
+    }, 
+    {
+      "mode": "NULLABLE", 
+      "name": "purchase_order_id", 
+      "type": "STRING"
+    }, 
+    {
+      "fields": [
+        {
+          "fields": [
+            {
+              "mode": "NULLABLE", 
+              "name": "eta", 
+              "type": "DATE"
+            }
+          ], 
+          "mode": "NULLABLE", 
+          "name": "dap_dates", 
+          "type": "RECORD"
+        },
+        {
+          "fields": [
+            {
+              "mode": "NULLABLE", 
+              "name": "eta", 
+              "type": "DATE"
+            },
+            {
+              "mode": "NULLABLE", 
+              "name": "etd", 
+              "type": "DATE"
+            }
+          ], 
+          "mode": "NULLABLE", 
+          "name": "fob_dates", 
+          "type": "RECORD"
+        },
+        {
+          "fields": [
+            {
+              "mode": "NULLABLE", 
+              "name": "eta", 
+              "type": "DATE"
+            },
+            {
+              "mode": "NULLABLE", 
+              "name": "etd", 
+              "type": "DATE"
+            }
+          ], 
+          "mode": "NULLABLE", 
+          "name": "ddp_dates", 
+          "type": "RECORD"
+        },
+        {
+          "fields": [
+            {
+              "mode": "NULLABLE", 
+              "name": "eta", 
+              "type": "DATE"
+            },
+            {
+              "mode": "NULLABLE", 
+              "name": "etd", 
+              "type": "DATE"
+            }
+          ], 
+          "mode": "NULLABLE", 
+          "name": "exw_dates", 
+          "type": "RECORD"
+        },
+        {
+          "fields": [
+            {
+              "mode": "NULLABLE", 
+              "name": "eta", 
+              "type": "DATE"
+            },
+            {
+              "mode": "NULLABLE", 
+              "name": "etd", 
+              "type": "DATE"
+            }
+          ], 
+          "mode": "NULLABLE", 
+          "name": "cif_dates", 
+          "type": "RECORD"
+        }
+      ], 
+      "mode": "NULLABLE", 
+      "name": "delivery_schedule", 
+      "type": "RECORD"
+    }, 
+    {
+      "mode": "NULLABLE", 
+      "name": "supplier_code", 
+      "type": "STRING"
+    }, 
+    {
+      "mode": "NULLABLE", 
+      "name": "incoterm", 
+      "type": "STRING"
+    }
+  ]
+

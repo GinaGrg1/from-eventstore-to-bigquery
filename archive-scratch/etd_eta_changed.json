@@ -1,0 +1,104 @@
+[
+  {
+    "mode": "NULLABLE", 
+    "name": "purchase_order_id", 
+    "type": "STRING"
+  }, 
+  {
+    "fields": [
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "etd", 
+            "type": "DATE"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "eta", 
+            "type": "DATE"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "dap_dates", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "etd", 
+            "type": "DATE"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "eta", 
+            "type": "DATE"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "ddp_dates", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "etd", 
+            "type": "DATE"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "eta", 
+            "type": "DATE"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "exw_dates", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "etd", 
+            "type": "DATE"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "eta", 
+            "type": "DATE"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "cif_dates", 
+        "type": "RECORD"
+      }, 
+      {
+        "fields": [
+          {
+            "mode": "NULLABLE", 
+            "name": "etd", 
+            "type": "DATE"
+          }, 
+          {
+            "mode": "NULLABLE", 
+            "name": "eta", 
+            "type": "DATE"
+          }
+        ], 
+        "mode": "NULLABLE", 
+        "name": "fob_dates", 
+        "type": "RECORD"
+      }
+    ], 
+    "mode": "NULLABLE", 
+    "name": "delivery_schedule", 
+    "type": "RECORD"
+  }, 
+  {
+    "mode": "REPEATED", 
+    "name": "reasons", 
+    "type": "STRING"
+  }
+]
